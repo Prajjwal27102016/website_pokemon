@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blastoise - Pokemon App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* Blastoise themed blue gradient */
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            padding-top: 60px;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #333;
+            margin: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            padding: 15px 20px;
+            color: #1dd1a1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #1dd1a1;
+            color: #333;
+        }
+
+        nav a.home {
+            background: #4a90e2;
+            color: white;
+        }
+
+        nav a.home:hover {
+            background: #357abd;
+        }
+
+        .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .info {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .info p {
+            margin-bottom: 0.8rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .info strong {
+            color: #333;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background: #4a90e2;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #357abd;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="home">Home</a>
+        <a href="pikachu.html">⚡ Pikachu</a>
+        <a href="charizard.html">🔥 Charizard</a>
+        <a href="blastoise.html">🛡️ Blastoise</a>
+        <a href="lugia.html">🌊 Lugia</a>
+    </nav>
+
+    <div class="container">
+        <div class="emoji">🐢</div>
+        <h1>Blastoise</h1>
+
+        <div class="info">
+            <p><strong>Type:</strong> Water</p>
+            <p><strong>Number:</strong> #009</p>
+            <p><strong>Height:</strong> 5'3" (1.6m)</p>
+            <p><strong>Weight:</strong> 188.5 lbs (85.5kg)</p>
+            <p><strong>Description:</strong> It crushes its foe under its heavy body to cause fainting. In a pinch, it
+                will withdraw inside its shell. The rocket cannons on its shell fire jets of water capable of punching
+                holes through thick steel.</p>
+        </div>
+
+        <div class="info">
+            <p><strong>Abilities:</strong> Torrent, Rain Dish</p>
+            <p><strong>Base Stats:</strong> HP: 79, ATK: 83, DEF: 100, SP.ATK: 85, SP.DEF: 105, SPD: 78</p>
+        </div>
+
+        <a href="pokemon.html" class="back-btn">← Back Home</a>
+    </div>
+</body>
+
+</html>
