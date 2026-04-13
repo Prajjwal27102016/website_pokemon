@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charizard - Pokemon App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -14,27 +16,24 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
+            /* Fire-themed gradient */
+            background: linear-gradient(135deg, #ff9800 0%, #e65100 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2rem;
+            padding-top: 80px;
         }
 
-        .container {
+        .container-main {
             background: white;
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            max-width: 800px;
+            width: 100%;
             text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 2rem;
         }
 
         nav {
@@ -44,8 +43,7 @@
             top: 0;
             left: 0;
             background: #333;
-            margin: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         nav a {
@@ -53,7 +51,6 @@
             color: #1dd1a1;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
             transition: 0.3s;
         }
 
@@ -67,52 +64,41 @@
             color: #333;
         }
 
-        nav a.home:hover {
-            background: #ffb300;
-        }
-
-        body {
-            padding-top: 60px;
-        }
-
-        .emoji {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
         .info {
             background: #f5f5f5;
             padding: 1.5rem;
             border-radius: 10px;
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
             text-align: left;
-        }
-
-        .info p {
-            margin-bottom: 0.8rem;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .info strong {
-            color: #333;
         }
 
         .back-btn {
             padding: 10px 20px;
-            font-size: 1rem;
             color: white;
             background: #ff9800;
-            border: none;
             border-radius: 8px;
-            cursor: pointer;
             text-decoration: none;
             display: inline-block;
             transition: 0.3s;
+            margin-bottom: 1.5rem;
         }
 
         .back-btn:hover {
-            background: #ff6f00;
+            background: #e65100;
+            color: white;
+        }
+
+        /* Carousel Image Fixes */
+        #demo {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 5px solid #f5f5f5;
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            /* Keeps images from looking stretched */
         }
     </style>
 </head>
@@ -124,21 +110,18 @@
         <a href="charizard.html">🔥 Charizard</a>
         <a href="lugia.html">🌊 Lugia</a>
         <a href="blastoise.html">💧 Blastoise</a>
-        <a href="about.html" class="about">About Me</a>
+        <a href="about.html">📖 About Me</a>
     </nav>
 
-    <div class="container">
-        <div class="emoji">🔥</div>
+    <div class="container-main">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🔥</div>
         <h1>Charizard</h1>
 
         <div class="info">
             <p><strong>Type:</strong> Fire / Flying</p>
             <p><strong>Number:</strong> #006</p>
-            <p><strong>Height:</strong> 5'7" (1.7m)</p>
-            <p><strong>Weight:</strong> 199.5 lbs (90.5kg)</p>
             <p><strong>Description:</strong> Charizard flies around the sky in search of powerful opponents. It breathes
-                fire of such great heat that it melts anything. However, if it is wounded, it will withdraw to a
-                mountain peak and wait for a day when it is more powerful.</p>
+                fire of such great heat that it melts anything.</p>
         </div>
 
         <div class="info">
@@ -147,7 +130,36 @@
         </div>
 
         <a href="index.html" class="back-btn">← Back Home</a>
+
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Mega_Charizard.jpg" class="d-block w-100" alt="Pokemon 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="charizard2.png" class="d-block w-100" alt="Pokemon 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="charizard.png" class="d-block w-100" alt="Pokemon 3">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

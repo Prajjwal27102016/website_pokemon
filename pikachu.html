@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pikachu - Pokemon App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -19,23 +21,20 @@
             justify-content: center;
             align-items: center;
             padding: 2rem;
+            padding-top: 80px; /* Adjusted for nav height */
         }
 
-        .container {
+        .container-main {
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px; /* Reduced for better look */
+            width: 100%;
             text-align: center;
         }
 
-        h1 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-
+        /* Nav Styles */
         nav {
             width: 100%;
             display: flex;
@@ -43,8 +42,7 @@
             top: 0;
             left: 0;
             background: #333;
-            margin: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         nav a {
@@ -52,7 +50,6 @@
             color: #1dd1a1;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
             transition: 0.3s;
         }
 
@@ -66,83 +63,106 @@
             color: #333;
         }
 
-        nav a.home:hover {
-            background: #ffb300;
+        /* Carousel Styling */
+        #demo {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 4px solid #f5f5f5;
         }
 
-        body {
-            padding-top: 60px;
-        }
-
-        .emoji {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .carousel-item img {
+            height: 400px; /* Set a fixed height */
+            object-fit: cover; /* Prevents image stretching */
         }
 
         .info {
             background: #f5f5f5;
             padding: 1.5rem;
             border-radius: 10px;
-            margin-bottom: 1.5rem;
+            margin: 1.5rem 0;
             text-align: left;
-        }
-
-        .info p {
-            margin-bottom: 0.8rem;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .info strong {
-            color: #333;
         }
 
         .back-btn {
             padding: 10px 20px;
-            font-size: 1rem;
-            color: white;
+            color: rgb(255, 255, 255);
             background: #ffc400;
-            border: none;
             border-radius: 8px;
-            cursor: pointer;
             text-decoration: none;
             display: inline-block;
             transition: 0.3s;
+            font-weight: bold;
         }
 
         .back-btn:hover {
-            background: #ffb300;
+            background: #e6b000;
+            color: rgb(255, 255, 255);
         }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="home">Home</a>
         <a href="pikachu.html">⚡ Pikachu</a>
         <a href="charizard.html">🔥 Charizard</a>
         <a href="lugia.html">🌊 Lugia</a>
         <a href="blastoise.html">💧 Blastoise</a>
-        <a href="about.html" class="about">About Me</a> 
+        <a href="bulbasuar.html">🌱 Bulbasaur</a>
+        <a href="about.html">📖 About Me</a> 
     </nav>
 
-    <div class="container">
-        <div class="emoji">⚡</div>
+    <div class="container-main">
+        <div class="emoji" style="font-size: 4rem;">⚡</div>
         <h1>Pikachu</h1>
         
-        <div class="info">
-            <p><strong>Type:</strong> Electric</p>
-            <p><strong>Number:</strong> #025</p>
-            <p><strong>Height:</strong> 1'4" (0.4m)</p>
-            <p><strong>Weight:</strong> 13.2 lbs (6.0kg)</p>
-            <p><strong>Description:</strong> When several of these Pokemon gather, their electricity can build and cause lightning storms. Forests where nests of Pikachu live are dangerous since the trees are so often struck by lightning.</p>
-        </div>
 
-        <div class="info">
-            <p><strong>Abilities:</strong> Static, Lightningrod</p>
-            <p><strong>Base Stats:</strong> HP: 35, ATK: 55, DEF: 40, SP.ATK: 50, SP.DEF: 50, SPD: 90</p>
-        </div>
-
+        
+            <div class="info">
+                <p><strong>Type:</strong> Electric</p>
+                <p><strong>Number:</strong> #025</p>
+                <p><strong>Height:</strong> 1'4" (0.4m)</p>
+                <p><strong>Weight:</strong> 13.2 lbs (6.0kg)</p>
+                <p><strong>Description:</strong> When several of these Pokemon gather, their electricity can build and cause
+                    lightning storms. Forests where nests of Pikachu live are dangerous since the trees are so often struck by
+                    lightning.</p>
+            </div>
+        
+            <div class="info">
+                <p><strong>Abilities:</strong> Static, Lightningrod</p>
+                <p><strong>Base Stats:</strong> HP: 35, ATK: 55, DEF: 40, SP.ATK: 50, SP.DEF: 50, SPD: 90</p>
+            </div>
         <a href="index.html" class="back-btn">← Back Home</a>
+
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+        
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Pokémon_Pikachu_art.png" class="d-block w-100" alt="Pikachu 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="lian.jpg" class="d-block w-100" alt="Pikachu 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="pokemon4.jpg" class="d-block w-100" alt="Pikachu 3">
+                </div>
+            </div>
+        
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

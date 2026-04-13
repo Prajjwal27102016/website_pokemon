@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -13,81 +15,26 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
-            padding: 2rem;
-        }
-
-        .container {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .banner-img {
-            width: 100%;
-            max-width: 1000px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            margin: 2rem 0;
-            display: block;
-        }
-
-        h1 {
-            display: none;
-        }
-
-        .welcome-text {
-            display: none;
-        }
-
-        .pokemon-links {
-            display: none;
-        }
-
-        .pokemon-btn {
-            padding: 12px 24px;
-            font-size: 1rem;
+            background-color: #222;
+            position: relative;
             color: white;
-            background: #ff6b6b;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-            font-weight: bold;
+            overflow-x: hidden;
         }
 
-        .pokemon-btn:hover {
-            background: #ee5a52;
-            transform: scale(1.05);
-        }
-
-        .pokemon-btn.charizard {
-            background: #ff9800;
-        }
-
-        .pokemon-btn.charizard:hover {
-            background: #e68900;
-        }
-
-        .pokemon-btn.pikachu {
-            background: #ffc400;
-            color: #333;
-        }
-
-        .pokemon-btn.pikachu:hover {
-            background: #ffb300;
-        }
-
-        .pokemon-btn.lugia {
-            background: #2196f3;
-        }
-
-        .pokemon-btn.lugia:hover {
-            background: #0b7dda;
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('image.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: -1;
         }
 
         nav {
@@ -95,9 +42,8 @@
             display: flex;
             position: fixed;
             top: 0;
-            left: 0;
-            background: #333;
-            margin: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
         }
 
         nav a {
@@ -105,13 +51,12 @@
             color: #1dd1a1;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
             transition: 0.3s;
         }
 
         nav a:hover {
-            background: #1dd1a1;
-            color: #333;
+            color: #fff;
+            text-shadow: 0 0 10px #1dd1a1;
         }
 
         nav a.home {
@@ -119,38 +64,139 @@
             color: #333;
         }
 
-        nav a.home:hover {
-            background: #ffb300;
+        .container {
+            padding: 140px 2rem 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        body {
-            padding-top: 60px;
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #c9fff0;
+            text-shadow: 0 0 10px #5d9586, 0 0 20px #1dd1a17a, 0 0 30px #0040ff;
+            margin-bottom: 40px;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 50px;
+            border-radius: 25px;
+            border: 1px solid rgba(192, 179, 179, 0.2);
+            line-height: 1.8;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            margin-bottom: 60px;
+        }
+
+        .welcome-text {
+            font-size: 1.35rem;
+            color: #eee;
+            text-align: justify;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel {
+            max-width: 850px;
+            margin: 0 auto 100px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+            border: 4px solid transparent;
+        }
+
+        .carousel:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(60, 245, 196, 0.5);
+            border-color: #1dd1a1;
+        }
+
+        .carousel-item img {
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: drop-shadow(0 0 5px #1dd1a1);
         }
     </style>
 </head>
 
 <body>
+
     <nav>
         <a href="index.html" class="home">Home</a>
         <a href="pikachu.html">⚡ Pikachu</a>
         <a href="charizard.html">🔥 Charizard</a>
         <a href="lugia.html">🌊 Lugia</a>
-        <a href="blastoise.html">💧 Blastoise</a>
-        <a href="about.html">About Me</a>
-        <a href="contact.html">Contact</a>
+        <a href="blastoise.html">🛡️ Blastoise</a>
+        <a href="bulbasuar.html">🍃 Bulbasaur</a>
+        <a href="about.html">About me 📖</a>
     </nav>
-<div class="container">
-    <h1>Welcome to Pokemon World!</h1>
-    <p class="welcome-text">Choose your favorite Pokemon to learn more</p>
 
-    <img src="image.png" alt="Pokemon surfing" class="banner-img">
+    <div class="container">
+        <h1>🤖Welcome to Pokemon World!🤖👇</h1>
 
-    <div class="pokemon-links">
-            <a href="pikachu.html" class="pokemon-btn pikachu">⚡ Pikachu</a>
-            <a href="charizard.html" class="pokemon-btn charizard">🔥 Charizard</a>
-            <a href="lugia.html" class="pokemon-btn lugia">🌊 Lugia</a>
+        <div class="content-box">
+            <p class="welcome-text">
+            Explore the vast and wondrous world of Pokémon! From the jagged, snow-capped peaks of the Johto mountains to the
+            crushing depths of the Whirl Islands where the legendary Lugia slumbers, a new adventure awaits around every corner.
+            Whether you are trekking through the lush forests of Kanto or surfing across the tropical currents of Hoenn, the bond
+            between a Trainer and their Pokémon is the key to uncovering the mysteries of the land. Each creature possesses its own
+            unique spirit, elemental powers, and hidden potential.
+            Step into a sprawling, multi-regional odyssey that transcends the boundaries of mere travel and delves into the very
+            heart of a world defined by the symbiotic harmony between humanity and the extraordinary creatures known as Pokémon.
+            This is a realm where the horizon is never just a line, but an invitation—an expansive tapestry woven with the golden
+            sands of Alola’s sun-drenched beaches, the rhythmic, industrial heartbeat of Galar’s sprawling metropolises, and the
+            ancient, myth-heavy whispers echoing through the cavernous reaches of Mt. Coronet in Sinnoh. Every blade of tall grass
+            is a threshold to the unknown, vibrating with the rustle of a hidden Oddish or the sudden, electric spark of a
+            territorial Manectric. To be a Trainer is to embrace a life of perpetual motion, where your boots might be caked in the
+            volcanic ash of Hoenn’s Route 113 one day and dusted with the pristine, eternal snows of Kalos’s Frost Cavern the next.
+            <br><br>
+            The journey is far more than a quest for badges or the prestige of the Pokémon League; it is a spiritual undertaking
+            that tests the limits of one’s resolve and empathy. Consider the profound complexity of the elemental forces at play:
+            the roaring, incandescent fury of a Charizard’s Flamethrower, the serene and terrifying elegance of a Milotic’s Hydro
+            Pump, or the reality-warping psychic resonance of an Alakazam’s mind. These are not merely pets or tools of combat; they
+            are living embodiments of the natural world, possessing unique temperaments, ancestral heritages, and untapped potential
+            that can only be unlocked through a genuine, unwavering bond. As you navigate the winding paths of the Viridian Forest
+            or brave the haunting, spectral mists of the Lavender Town Pokémon Tower, you realize that your team is a reflection of
+            your own soul.
+            </p>
+        </div>
+
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="pokemon.webp" class="d-block w-100" alt="Pokemon 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="pokemon6.jpg" class="d-block w-100" alt="Pokemon 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="pokemon4.jpg" class="d-block w-100" alt="Pokemon 3">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

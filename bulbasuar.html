@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lugia - Pokemon App</title>
+    <title>Bulbasaur - Pokemon App</title>
     <style>
         * {
             margin: 0;
@@ -14,27 +14,29 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #2196f3 0%, #0d47a1 100%);
+            /* Updated to Bulbasaur Green Gradients */
+            background: linear-gradient(135deg, #78c850 0%, #4ea135 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2rem;
+            padding-top: 80px;
         }
 
         .container {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            max-width: 1000px;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
             text-align: center;
         }
 
         h1 {
-            color: #333;
+            color: #2d5a27;
             margin-bottom: 1rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         nav {
@@ -44,7 +46,6 @@
             top: 0;
             left: 0;
             background: #333;
-            margin: 0;
             z-index: 100;
         }
 
@@ -63,56 +64,53 @@
         }
 
         nav a.home {
-            background: #ffc400;
-            color: #333;
-        }
-
-        nav a.home:hover {
-            background: #ffb300;
-        }
-
-        body {
-            padding-top: 60px;
+            background: #78c850;
+            color: white;
         }
 
         .emoji {
-            font-size: 4rem;
+            font-size: 5rem;
             margin-bottom: 1rem;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
         }
 
         .info {
-            background: #f5f5f5;
+            background: #f0f9f0;
+            /* Soft green background for info boxes */
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 1.5rem;
             text-align: left;
+            border-left: 5px solid #78c850;
         }
 
         .info p {
             margin-bottom: 0.8rem;
-            color: #555;
+            color: #444;
             line-height: 1.6;
         }
 
         .info strong {
-            color: #333;
+            color: #2d5a27;
         }
 
         .back-btn {
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 1rem;
             color: white;
-            background: #2196f3;
+            background: #4ea135;
             border: none;
-            border-radius: 8px;
+            border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             transition: 0.3s;
+            font-weight: bold;
         }
 
         .back-btn:hover {
-            background: #0b7dda;
+            background: #2d5a27;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -124,30 +122,28 @@
         <a href="charizard.html">🔥 Charizard</a>
         <a href="lugia.html">🌊 Lugia</a>
         <a href="blastoise.html">💧 Blastoise</a>
-        <a href="bulbasuar.html">🌱 Bulbasaur</a>
-        <a href="about.html" class="about">📖About Me</a>
+        <a href="about.html">📖About Me</a>
     </nav>
 
     <div class="container">
-        <div class="emoji">🌊</div>
-        <h1>Lugia</h1>
+        <div class="emoji">🌱</div>
+        <h1>Bulbasaur</h1>
 
         <div class="info">
-            <p><strong>Type:</strong> Psychic / Flying</p>
-            <p><strong>Number:</strong> #249</p>
-            <p><strong>Height:</strong> 17'1" (5.2m)</p>
-            <p><strong>Weight:</strong> 476.2 lbs (216.0kg)</p>
-            <p><strong>Description:</strong> Lugia's wings are not used for flying. It is a master of the seas. Its
-                large wings are actually used for swimming. Lugia can dive to depths of over 3,280 feet on a single gulp
-                of air.</p>
+            <p><strong>Type:</strong> Grass / Poison</p>
+            <p><strong>Number:</strong> #001</p>
+            <p><strong>Height:</strong> 2'04" (0.7m)</p>
+            <p><strong>Weight:</strong> 15.2 lbs (6.9kg)</p>
+            <p><strong>Description:</strong> Bulbasaur can be seen napping in bright sunlight. There is a seed on its
+                back. By soaking up the sun's rays, the seed grows progressively larger.</p>
         </div>
 
         <div class="info">
-            <p><strong>Abilities:</strong> Multiscale, Pressure</p>
-            <p><strong>Base Stats:</strong> HP: 106, ATK: 90, DEF: 130, SP.ATK: 90, SP.DEF: 154, SPD: 110</p>
+            <p><strong>Abilities:</strong> Overgrow, Chlorophyll (Hidden)</p>
+            <p><strong>Base Stats:</strong> HP: 45, ATK: 49, DEF: 49, SP.ATK: 65, SP.DEF: 65, SPD: 45</p>
         </div>
 
-        <a href="index.html" class="back-btn">← Back Home</a>
+        <a href="index.html" class="back-btn">← Back to home</a>
     </div>
 </body>
 
